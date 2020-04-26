@@ -49,12 +49,17 @@ router.get('/:gameId/generate', (req, res) => {
 
 function generateNumber(calledoutnumbers)
 {
+  var r =null;
   const newNumber = Math.floor(Math.random() * 100) + 1;
   if(calledoutnumbers && calledoutnumbers.find(x=>x==newNumber))
   {
-    generateNumber(calledoutnumbers);
+   r = generateNumber(calledoutnumbers);
   }
-  return newNumber;
+  else
+  {
+    r= newNumber;
+  }
+  return r;
 }
 
 export default router;
