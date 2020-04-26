@@ -26,6 +26,7 @@ app.use((req, res, next) => {
 
 
 app.use('/users', routes.user);
+app.use('/game', routes.game);
 
 
 // Start
